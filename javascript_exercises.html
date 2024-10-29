@@ -11,21 +11,21 @@
     </div>
     
     <script>
-        /*
+        
               //ex 1
-        function guestNum(){
-            let guestInput=prompt("please enter a number");
-         let guestNumber=Number(guestInput);
-            if  (!isNaN(guestNumber) && guestNumber >= 1 && guestNumber <= 10){
+        function guestNum(guestInput) {
+    const randomNum = Math.floor(Math.random() * 10) + 1;
+    let guestNumber = Number(guestInput); 
+    if  (!isNaN(guestNumber) && guestNumber >= 1 && guestNumber <= 10){
                 return "Good Work"
             } else {
                 return "Not Match"
             }
-        }
-console.log(guestNum());
+}
 
 
 //ex 2
+
 function daysLeftForChristmas() {
     const presentDay = new Date();
     const christmasDay = new Date(presentDay.getFullYear(), 11, 25); // December 25th
@@ -40,30 +40,16 @@ function daysLeftForChristmas() {
     const differenceInDays = Math.round(differenceInTime / (1000 * 3600 * 24));
 
     return differenceInDays;
-}
-        console.log(daysLeftForChristmas());
-
-        
+}      
         //ex 3 
-        function Calculate(){
-        const num1=prompt("please enter a num 1");
-        const num2=prompt("please enter a num 2");
-        if(isNaN(num1)||isNaN(num2)){
-            alert ("Please enter a valid number")
-        }
-        const multiplicationResult=num1*num2;
-        let divResult;
-        if(num2!==0){
-            divResult=num1/num2;
-        }else{
-            undefined
-        }
-        
-            alert(`multiplication:${num1}*${num2}=${multiplicationResult}`);
-            alert(`division:${num1}/${num2}=${divResult}`);
-        }
-    console.log(Calculate());
-
+        function Calculate(num1, num2) {
+    if (isNaN(num1) || isNaN(num2)) {
+        alert("Please enter a valid number");
+        return; 
+    }
+    const multiplicationResult = num1 * num2;
+    const divisionResult = num1 / num2;
+}
 
     //ex 4
        function findTheLongestString(arr){
@@ -75,9 +61,6 @@ function daysLeftForChristmas() {
         }
         return longestString;
        }
-       const stringsArray = ["apple", "banana", "blueberry", "kiwi"];
-       const longest = findTheLongestString(stringsArray);
-       console.log(longest);
 
  //ex 5
 function findLargestEvenNum(arr){
@@ -91,15 +74,11 @@ function findLargestEvenNum(arr){
     }
     return largestNum
    }
-   const arr=[2,3,4,5,6,8,7];
-   const largest=findLargestEvenNum(arr);
-   console.log(largest);
-
 
    //ex 6
    function removeDuplicates(inputString) {
     
-    const charCount = {};
+    const charCount = [];
     for (const char of inputString) {
         charCount[char] = (charCount[char] || 0) + 1;
     } 
@@ -113,10 +92,6 @@ function findLargestEvenNum(arr){
     return result;
 }
 
-const inputStr = "miss";
-const outputStr = removeDuplicates(inputStr);
-console.log(outputStr);
-
 
    //ex 7
    function cubeSum(n){
@@ -126,10 +101,6 @@ console.log(outputStr);
     }
     return sum;
 }
-const n=5;
-const result=cubeSum(n);
-console.log("The cube sum is: ",result); 
-
 
 //ex 8
 function objectsEquivalent(obj1, obj2) {
@@ -149,13 +120,7 @@ function objectsEquivalent(obj1, obj2) {
 
     return true; 
 }
-const object1 = { a: 1, b: 2, c: 3 };
-const object2 = { b: 2, c: 3 };
 
-console.log(objectsEquivalent(object1, object2)); 
-
-const object3 = { a: 1, b: 2, d: 4 };
-console.log(objectsEquivalent(object1, object3)); 
 
 //ex 9
 function filterArray(originalArray, valuesToFilter) {
@@ -163,39 +128,22 @@ function filterArray(originalArray, valuesToFilter) {
     return originalArray.filter(item => !valuesToFilter.includes(item));
 }
 
-
-const originalArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const valuesToFilter = [2, 4, 6, 8];
-
-const filteredArray = filterArray(originalArray, valuesToFilter);
-console.log('Original Array:', originalArray);
-console.log('Filtered Array:', filteredArray);
-
-
 //ex 10
 function extractValuesAtIndexes(array, indexes) {
     return indexes.map(index => array[index]).filter(value => value !== undefined);
 }
 
-
-const myArray = [10, 20, 30, 40, 50];
-const indexesToExtract = [1, 3, 4];
-
-const extractedValues = extractValuesAtIndexes(myArray, indexesToExtract);
-console.log(extractedValues); 
-
-
 //ex 11
-    var student={
+function DeleteObj(){
+    const student={
         name:"David Rayy",
         class:"VI",
         rollno:12
     };
-    console.log("before deletion",student);
-    delete student.rollno;
-    console.log("after deletion",student);
+   delete student.rollno;
+}
 
-
+    
 //ex 12
 class Cylinder{
     constructor(height,radius){
@@ -207,9 +155,6 @@ class Cylinder{
         return Volume.toFixed(4);
     }
 }
-const myCylinder = new Cylinder(10, 5);
-console.log(myCylinder.CalculateVolume());*/
-
 
 //ex 13
 function Clock() {
@@ -234,20 +179,11 @@ function clockUpdate() {
 
 clockUpdate();
 setInterval(clockUpdate, 1000);
-/*
+
 //ex 14
 function isLowerCase(str) {
     return str === str.toLowerCase();
 }
-
-
-const testString1 = "hello world";
-const testString2 = "Hello World";
-
-
-console.log(`${testString1} is lowercase: ${isLowerCase(testString1)}`); 
-console.log(`${testString2} is lowercase: ${isLowerCase(testString2)}`); 
-
 
 //ex 15
 const add=(a,b)=>{
@@ -259,12 +195,6 @@ const add=(a,b)=>{
         }
     });
 }
-add(10,4)
-.then(result=>console.log("the total is ",result))
-.catch(error=>console.log(error));
-
-
-
 
 
 //ex1
@@ -273,77 +203,51 @@ function decimal(){
     return euler.toFixed(4);
 
 }
-console.log(decimal());
 
 //ex 2
 const findMax=(number)=>Math.max(...number);
-console.log(findMax([1,2,3,4,5,6,7,8,9]));
 
 //ex3
 const product= "shirt";
 const price=1500;
 const qty=5;
 const totalPrice=(price*qty);
-console.log(`You purchased ${qty} unit of ${product} for ${totalPrice}` );
 
-//ex 4
-const arr1 = [3, 1, 4, 5, 2];
-const arr2 = [5, 6, 7, 1, 8];
-
+//ex 4 
+function myArray(){
+    const arr1 = [];
+const arr2 = [];
 const combinedArr = [...new Set([...arr1, ...arr2])].sort((a, b) => a - b);
-
-console.log(combinedArr);
+}
 
 //ex 5
+
 const Car={make:"toyota", model:"hummer", year:"2013" };
 const {make,model,year="unknown"}=Car;
-console.log(`Make: ${make} Model: ${model} Year: ${year}` );
-
 
 //ex 6
-class Cycle{
-    constructor(radius){
-        this.radius=radius;
-    }
-    CalculateArea(){
-        if (this.radius===undefined){
-            return "Radius is missing";
-        }else{
-          const  Area= Math.PI*this.radius*this.radius;
-            return Area.toFixed(3);
-        }
-        
+function Cycle(radius) {
+    if (radius === undefined) {
+        return "Radius is missing";
+    } else {
+        const Area = Math.PI * radius * radius; 
+        this.Area = Area.toFixed(3); 
     }
 }
-const myCycle = new Cycle(10);
-console.log("The area of your circle is",myCycle.CalculateArea());
 
 //ex 7
-
     const average=(...score)=>{
         const total=score.reduce((acc,score)=>acc+score,0);
         return (total/score.length).toFixed(2);
     }
 
-console.log(average(10,30,40));
-
 //ex 8
-const word=["react","angular","javascript","vue"];
+const word=[];
 const reverseString=word.map(word=>word.split('').reverse().join(''));
-console.log(`the reversed word is: ${reverseString}`);
 
 //ex 9
-const books = [
-    { title: "Book One", pages: 250 },
-    { title: "Book Two", pages: 400 },
-    { title: "Book Three", pages: 320 },
-    { title: "Book Four", pages: 150 },
-    { title: "Book Five", pages: 500 }
-];
-
+const books = [];
 const booksMoreThan300Pages = books.filter(book => book.pages > 300);
-
-console.log(booksMoreThan300Pages);
 
 //ex 10
 const fetchData=()=>{
@@ -353,20 +257,7 @@ const fetchData=()=>{
             resolve("Data fetched succesfully!");
         },delay)
     });
-}
-
-
-fetchData().then(result => console.log(result)); 
-    
-
-
-    
-*/
-
-
-
-
-
+}     
 
 
 </script>
