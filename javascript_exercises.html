@@ -16,6 +16,7 @@
         function guestNum(guestInput) {
     const randomNum = Math.floor(Math.random() * 10) + 1;
     let guestNumber = Number(guestInput); 
+            //clean code : use ternaire operation here
     if  (!isNaN(guestNumber) && guestNumber >= 1 && guestNumber <= 10){
                 return "Good Work"
             } else {
@@ -25,10 +26,10 @@
 
 
 //ex 2
-
+//trop long
 function daysLeftForChristmas() {
     const presentDay = new Date();
-    const christmasDay = new Date(presentDay.getFullYear(), 11, 25); // December 25th
+    const christmasDay = new Date(presentDay.getFullYear(), 11, 25);
 
     let nextChristmas;
     if (presentDay > christmasDay) {
@@ -42,6 +43,7 @@ function daysLeftForChristmas() {
     return differenceInDays;
 }      
         //ex 3 
+    //remove alert
         function Calculate(num1, num2) {
     if (isNaN(num1) || isNaN(num2)) {
         alert("Please enter a valid number");
@@ -52,6 +54,7 @@ function daysLeftForChristmas() {
 }
 
     //ex 4
+        //use arrow function here
        function findTheLongestString(arr){
         longestString='';
         for (let str of arr){
@@ -62,7 +65,8 @@ function daysLeftForChristmas() {
         return longestString;
        }
 
- //ex 5
+ //ex 5\
+        
 function findLargestEvenNum(arr){
    let largestNum=null;
     for (let num of arr){
@@ -104,7 +108,7 @@ function findLargestEvenNum(arr){
 
 //ex 8
 function objectsEquivalent(obj1, obj2) {
-    
+    //use every method here
     if (typeof obj1 !== 'object' || typeof obj2 !== 'object' || obj1 === null || obj2 === null) {
         return "Object not valid"; 
     }
@@ -135,11 +139,12 @@ function extractValuesAtIndexes(array, indexes) {
 
 //ex 11
 function DeleteObj(){
-    const student={
-        name:"David Rayy",
-        class:"VI",
-        rollno:12
-    };
+    //remove this
+    // const student={
+    //     name:"David Rayy",
+    //     class:"VI",
+    //     rollno:12
+    // };
    delete student.rollno;
 }
 
@@ -198,6 +203,7 @@ const add=(a,b)=>{
 
 
 //ex1
+        //use arrow function here
 function decimal(){
     const euler=2.71828;
     return euler.toFixed(4);
@@ -208,6 +214,7 @@ function decimal(){
 const findMax=(number)=>Math.max(...number);
 
 //ex3
+        //do a function here
 const product= "shirt";
 const price=1500;
 const qty=5;
@@ -226,6 +233,7 @@ const Car={make:"toyota", model:"hummer", year:"2013" };
 const {make,model,year="unknown"}=Car;
 
 //ex 6
+//use ternaire operation here please, exple:  return radius === undefined ? "Radius is missing!" : radius * radius * pi;
 function Cycle(radius) {
     if (radius === undefined) {
         return "Radius is missing";
@@ -242,10 +250,12 @@ function Cycle(radius) {
     }
 
 //ex 8
+        //do function
 const word=[];
 const reverseString=word.map(word=>word.split('').reverse().join(''));
 
 //ex 9
+        //same here
 const books = [];
 const booksMoreThan300Pages = books.filter(book => book.pages > 300);
 
